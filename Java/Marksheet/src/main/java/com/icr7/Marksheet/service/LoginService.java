@@ -21,10 +21,12 @@ public class LoginService {
 	}
 
 	public AdminEntity AdminLogin(int id, String password) {
+		try {
 		if (schoolDao.getAdminData(id).getPassword().equals(password)) {
 			return schoolDao.getAdminData(id);
 		} else
 			return null;
+		}catch (Exception e) {return null;} 
 	}
 
 }

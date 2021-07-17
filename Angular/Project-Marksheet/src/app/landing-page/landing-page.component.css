@@ -1,0 +1,16 @@
+.container {
+  height: 400px;
+  width:700px;
+  position: relative;
+  
+
+}
+
+.vertical-center {
+  margin: 0;
+  width:300px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

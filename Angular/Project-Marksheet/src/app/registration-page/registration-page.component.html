@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="vertical-center">
+    <form [formGroup]="registrationForm">
+    
+      <div class="mb-3">
+        <label for="name" class="col-form-label">Student Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="col-form-label">Set Password</label>
+        <input type="text" class="form-control" id="password" formControlName="password">
+      </div>
+
+      <div class="mb-3">
+        <button  class="btn btn-success" type="submit"
+          [disabled]="!registrationForm.valid">register</button>
+      </div>
+
+
+
+    </form>
+  </div>
+</div>

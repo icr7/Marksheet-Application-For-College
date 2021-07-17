@@ -1,0 +1,16 @@
+<div class="container">
+
+    <div class="vertical-center">
+        
+        <button (click)="onClick1()" class="btn btn-primary btn-lg" style="margin:5px">Admin</button>
+        
+        <button (click)="onClick2()" class="btn btn-primary btn-lg" style="margin:5px">Student</button>
+      
+        <hr>
+    <div>
+        <app-admin-login *ngIf="selectedAdmin"></app-admin-login>
+        <app-student-login *ngIf="selectedStudent"></app-student-login>
+    </div>
+    </div>
+
+</div>
