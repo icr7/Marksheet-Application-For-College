@@ -1,14 +1,19 @@
 .container {
-  height: 400px;
-  width:700px;
-  position: relative;
+  height: 600px;
+  width:1980px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+
   
 
 }
 
 .vertical-center {
   margin: 0;
+  left: 100px;
   width:300px;
+  left: 150px;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);

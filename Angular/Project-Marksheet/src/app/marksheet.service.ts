@@ -5,7 +5,7 @@ import { Student } from './student';
   providedIn: 'root'
 })
 export class MarksheetService {
-
+list;
   constructor(private http: HttpClient) { }
 
   getAdmin(id: number, password: string) {
@@ -14,10 +14,21 @@ export class MarksheetService {
   getStudent(id: number, password: string) {
     return this.http.get('http://localhost:8080/api/loginStudent/' + id + '/' + password);
   }
+  getAllStudent() {
+    return this.http.get('http://localhost:8080/api/allStudent');
+  }
 
   registerNewStudent(studentObj: Student) {
     return this.http.post('http://localhost:8080/api/newStudent', studentObj);
   }
-
-
+  
+  myList(){
+  this.getAllStudent()
+  .subscribe(data=>{this.list=data;}
+    );
+  
+  }
+  my2List(){
+    return this.list;
+  }
 }

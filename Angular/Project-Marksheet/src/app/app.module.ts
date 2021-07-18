@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { StudentGridComponent } from './student-grid/student-grid.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { StudentGridComponent } from './student-grid/student-grid.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule.withComponents([StudentGridComponent])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,7 +27,8 @@ export class RegistrationPageComponent implements OnInit {
     console.log(this.studentObj)
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.marksheetService.myList();
   }
 
 }

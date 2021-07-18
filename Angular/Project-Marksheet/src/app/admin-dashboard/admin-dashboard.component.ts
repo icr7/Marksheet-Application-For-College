@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MarksheetService } from '../marksheet.service';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -10,15 +12,19 @@ export class AdminDashboardComponent implements OnInit {
   register:boolean=false;
   grid=false;
   home=true;
-  constructor(private router: Router) { }
+  obj;
+  abc:JSON;
+  constructor(private router: Router,private marksheetService:MarksheetService) { }
+  
 
+  ngOnInit() {
+    this.marksheetService.myList();
 
-  ngOnInit(): void {
   }
 
   registerFunc(){
     this.register=true;
-    this.grid=false;
+  
   }
   gridFunc(){
     this.grid=true;
