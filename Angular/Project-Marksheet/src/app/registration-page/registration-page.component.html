@@ -1,7 +1,7 @@
 <div class="container">
   <div class="vertical-center">
-    <form [formGroup]="registrationForm">
-    
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
       <div class="mb-3">
         <label for="name" class="col-form-label">Student Name</label>
         <input type="text" class="form-control" id="name" formControlName="name">
@@ -13,11 +13,10 @@
       </div>
 
       <div class="mb-3">
-        <button  class="btn btn-success" type="submit"
-          [disabled]="!registrationForm.valid">register</button>
+        <button class="btn btn-success" type="submit" [disabled]="!registrationForm.valid">register</button>
       </div>
 
-
+      <p *ngIf="submitted" style="color:rgb(5, 153, 17)">Registered successfully </p>
 
     </form>
   </div>
