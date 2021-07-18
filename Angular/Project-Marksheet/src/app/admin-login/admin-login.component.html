@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="adminLoginForm">
+    <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()">
         <p *ngIf="submit" style="color:red">{{status}} </p>
         <div class="mb-3">
             <label for="id" class="col-form-label">Admin id</label>
@@ -12,10 +12,8 @@
         </div>
 
         <div class="mb-3">
-            <button (click)="onSubmit()" class="btn btn-success" type="submit" [disabled]="!adminLoginForm.valid" >login</button>
+            <button class="btn btn-success" type="submit" [disabled]="!adminLoginForm.valid" >login</button>
         </div>
            
-        
-        
     </form>
 </div>

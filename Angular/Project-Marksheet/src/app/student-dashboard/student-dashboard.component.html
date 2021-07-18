@@ -1,1 +1,50 @@
-<p>student-dashboard works!</p>
+<div class="container">
+    <h1 class="display-5">{{marks.name}}</h1>
+    <div class="vertical-center">
+        <table class="table">
+
+            <thead>              
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                <tr>
+                   <th scope="row">1</th>
+                    <td>English</td>
+                    <td>{{marks.english}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">2</th>
+                    <td>hindi</td>
+                    <td>{{marks.hindi}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Maths</td>
+                    <td>{{marks.maths}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Science</td>
+                    <td>{{marks.science}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">5</th>
+                    <td>SSt</td>
+                    <td>{{marks.sst}}</td>
+                </tr>
+
+            </tbody>
+            
+        </table>
+    </div>
+</div>

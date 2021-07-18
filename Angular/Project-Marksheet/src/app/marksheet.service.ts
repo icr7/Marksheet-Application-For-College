@@ -11,6 +11,9 @@ export class MarksheetService {
   getAdmin(id: number, password: string) {
     return this.http.get('http://localhost:8080/api/loginAdmin/' + id + '/' + password);
   }
+  getStudent(id: number, password: string) {
+    return this.http.get('http://localhost:8080/api/loginStudent/' + id + '/' + password);
+  }
 
   registerNewStudent(studentObj: Student) {
     return this.http.post('http://localhost:8080/api/newStudent', studentObj);

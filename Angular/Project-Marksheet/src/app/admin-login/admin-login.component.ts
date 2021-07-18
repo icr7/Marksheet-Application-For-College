@@ -36,7 +36,6 @@ export class AdminLoginComponent implements OnInit {
         if(!this.obj){this.status="invalid credentials"}
         else{this.status=null; this.gotoAdmindash();}
       });
-
   }
 
   gotoAdmindash(){

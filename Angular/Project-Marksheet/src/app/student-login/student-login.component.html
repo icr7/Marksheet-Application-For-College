@@ -1,20 +1,18 @@
 <div class="container">
-    <form [formGroup]="adminLoginForm">
+    <form [formGroup]="studentLoginForm" (ngSubmit)="onSubmit()">
+        <p *ngIf="submit" style="color:red">{{status}} </p>
         <div class="mb-3">
             <label for="id" class="col-form-label">Roll Number</label>
             <input type="text" class="form-control" id="id" formControlName="id">
         </div>
-        
+
         <div class="mb-3">
             <label for="password" class="col-form-label">Password</label>
             <input type="password" class="form-control" id="password" formControlName="password">
         </div>
 
         <div class="mb-3">
-            <button (click)="onSubmit()" class="btn btn-success" type="submit" [disabled]="!adminLoginForm.valid" >login</button>
-        </div>
-        <div class="mb-3">
-           <h3 *ngIf="submit" >{{adm.email}}</h3>
+            <button class="btn btn-success" type="submit" [disabled]="!studentLoginForm.valid">login</button>
         </div>
     </form>
 </div>
