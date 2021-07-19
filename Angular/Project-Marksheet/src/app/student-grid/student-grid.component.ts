@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MarksheetService } from '../marksheet.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-student-grid',
   templateUrl: './student-grid.component.html',
   styleUrls: ['./student-grid.component.css']
 })
-export class StudentGridComponent implements OnInit {
-  list;
-  Loaded=false;
-  
-  constructor(private marksheetService: MarksheetService) {
-    this.marksheetService.myList();
-   }
 
-  ngOnInit(): void { 
-    this.list=this.marksheetService.myList();
-    this.Loaded=true;
-  }
+export class StudentGridComponent implements OnInit {
 
   columnDefs = [
     { field: 'id', width: 40 },
@@ -29,11 +20,13 @@ export class StudentGridComponent implements OnInit {
     { field: 'sst', width: 80 }
   ];
 
+  rowData: Observable<any[]>;
 
-  rowData = this.marksheetService.my2List()
+  constructor(private http: HttpClient) {
+  }
 
-  check() {
-    console.log(this.marksheetService.myList());
+  ngOnInit(): void {
+    this.rowData = this.http.get<any[]>('http://localhost:8080/api/allStudent')
   }
 
 

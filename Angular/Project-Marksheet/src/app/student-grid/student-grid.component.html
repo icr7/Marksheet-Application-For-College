@@ -1,8 +1,9 @@
 <div class="container">
     <div class="vertical-center">
-        <ag-grid-angular style="width: 585px; height: 500px;" class="ag-theme-balham" [rowData]="rowData"
-            [columnDefs]="columnDefs" *ngIf="Loaded">
-
+        <ag-grid-angular style="width: 585px; height: 500px;" 
+          class="ag-theme-balham" 
+          [rowData]="rowData | async"
+          [columnDefs]="columnDefs">
         </ag-grid-angular>
     </div>
 </div>

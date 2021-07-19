@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MarksheetService } from '../marksheet.service';
-import { Student } from '../student';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,28 +7,27 @@ import { Student } from '../student';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  register:boolean=false;
-  grid=false;
-  home=true;
-  obj;
-  abc:JSON;
-  constructor(private router: Router,private marksheetService:MarksheetService) { }
-  
+  register = false; r1 = true;
+  grid = false; g1 = true;
+  home = true;
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-    this.marksheetService.myList();
+  ngOnInit(): void {
 
   }
 
-  registerFunc(){
-    this.register=true;
-  
+  registerFunc() {
+    this.register = this.r1;
+    this.r1=!this.r1;
   }
-  gridFunc(){
-    this.grid=true;
-    this.register=false;
+
+  gridFunc() {
+    this.grid = this.g1;
+    this.g1=!this.g1;
   }
-  homeFunc(){
+
+  homeFunc() {
     this.router.navigate(['/']);
   }
+
 }
