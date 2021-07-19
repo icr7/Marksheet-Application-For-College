@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { StudentGridComponent } from './student-grid/student-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { MarksFeederComponent } from './marks-feeder/marks-feeder.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AgGridModule } from 'ag-grid-angular';
     AdminDashboardComponent,
     StudentDashboardComponent,
     RegistrationPageComponent,
-    StudentGridComponent
+    StudentGridComponent,
+    MarksFeederComponent
   ],
   imports: [
     BrowserModule,

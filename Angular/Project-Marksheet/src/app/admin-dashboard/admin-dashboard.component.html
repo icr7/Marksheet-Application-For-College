@@ -16,6 +16,9 @@
         <li class="nav-item">
           <button class="btn btn-info" (click)="registerFunc()" style="margin:5px">Registration</button>
         </li>
+        <li class="nav-item">
+          <button class="btn btn-info" (click)="feederFunc()" style="margin:5px">Feeder</button>
+        </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -31,10 +34,10 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
-      <form class="d-flex">
+      <!-- <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"style="margin:5px">Search</button>
-      </form>
+      </form> -->
 
       <li class="nav-item">
         <button class="btn btn-info" (click)="homeFunc()" style="margin:5px">Logout</button>
@@ -45,4 +48,5 @@
 
 <img src="assets/img1.jpg" alt="Trulli" width="1280" height="552">
 <app-registration-page *ngIf="register"></app-registration-page>
-<app-student-grid *ngIf="grid" ></app-student-grid>
+<app-student-grid *ngIf="grid" (feed)="feederFunc2($event)" ></app-student-grid>
+<app-marks-feeder *ngIf="feeder" [toFeed]="gridRowData"></app-marks-feeder>

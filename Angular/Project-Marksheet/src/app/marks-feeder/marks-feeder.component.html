@@ -1,0 +1,49 @@
+<div class="container">
+
+    <div class="vertical-center">
+        <form #feeder="ngForm" (ngSubmit)="saveData(feeder)" class="row g-3">
+
+            <div class="col-md-3">
+                <label for="roll" class="form-label">Roll No.</label>
+                <input type="number" [value]="toFeed.id" class="form-control" id="roll" name="id" ngModel >
+            </div>
+
+            <div class="col-md-8">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" [value]="toFeed.name" class="form-control" id="name" name="name" ngModel >
+            </div>
+
+            <div class="col-md-2">
+                <label for="english" class="form-label">english</label>
+                <input type="number" [value]="toFeed.english" class="form-control" id="english" name="english" ngModel>
+            </div>
+            <div class="col-md-2">
+                <label for="hindi" class="form-label">hindi</label>
+                <input type="number" [value]="toFeed.hindi" class="form-control" id="hindi" name="hindi" ngModel>
+            </div>
+            <div class="col-md-2">
+                <label for="maths" class="form-label">maths</label>
+                <input type="number" [value]="toFeed.maths" class="form-control" id="maths" name="maths" ngModel>
+            </div>
+            <div class="col-md-2">
+                <label for="science" class="form-label">science</label>
+                <input type="number" [value]="toFeed.science" class="form-control" id="science" name="science" ngModel>
+            </div>
+            <div class="col-md-2">
+                <label for="sst" class="form-label">sst</label>
+                <input type="number" [value]="toFeed.sst" class="form-control" id="sst" name="sst" ngModel>
+            </div>
+
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 70px; width: 250px; max-height: 140px;max-width: 450px; resize: both;"></textarea>
+                <label for="floatingTextarea2">Comments</label>
+            </div>
+
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">save</button>
+            </div>
+        </form>
+    </div>
+</div>

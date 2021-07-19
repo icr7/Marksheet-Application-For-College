@@ -1,9 +1,16 @@
 <div class="container">
     <div class="vertical-center">
+      <div class="example-header">
+      </div>
         <ag-grid-angular style="width: 585px; height: 500px;" 
           class="ag-theme-balham" 
           [rowData]="rowData | async"
-          [columnDefs]="columnDefs">
+          [columnDefs]="columnDefs"
+          [rowSelection]="rowSelection"
+          (gridReady)="onGridReady($event)"
+          (selectionChanged)="onSelectionChanged($event)"
+          
+          >
         </ag-grid-angular>
     </div>
 </div>
