@@ -45,7 +45,9 @@ public class SchoolDaoImpl implements SchoolDao {
 	}
 
 	@Override
-	public void SaveStudentMarks(StudentEntity studentEntity) {
+	public void updateStudentMarks(StudentEntity studentEntity) {
+		String pass = getStudentData(studentEntity.getId()).getPassword();
+		studentEntity.setPassword(pass);
 		studentRepo.save(studentEntity);
 
 	}

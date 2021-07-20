@@ -14,6 +14,6 @@ public interface SchoolDao {
 
 	public void RegisterNewStudent(StudentEntity entity);
 
-	public void SaveStudentMarks(StudentEntity entity);
+	public void updateStudentMarks(StudentEntity entity);
 
 }

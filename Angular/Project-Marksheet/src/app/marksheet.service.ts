@@ -5,7 +5,7 @@ import { Student } from './student';
   providedIn: 'root'
 })
 export class MarksheetService {
-list;
+  list;
   constructor(private http: HttpClient) { }
 
   getAdmin(id: number, password: string) {
@@ -21,14 +21,18 @@ list;
   registerNewStudent(studentObj: Student) {
     return this.http.post('http://localhost:8080/api/newStudent', studentObj);
   }
-  
-  myList(){
-  this.getAllStudent()
-  .subscribe(data=>{this.list=data;}
-    );
-  
+
+  feedStudentMarks(feedObj: Student) {
+    return this.http.put('http://localhost:8080/api/updateMarks/', feedObj);
   }
-  my2List(){
+
+  myList() {
+    this.getAllStudent()
+      .subscribe(data => { this.list = data; }
+      );
+
+  }
+  my2List() {
     return this.list;
   }
 }
