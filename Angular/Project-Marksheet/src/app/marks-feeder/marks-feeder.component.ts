@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MarksheetService } from '../marksheet.service';
 import { Student } from '../student';
@@ -10,6 +10,9 @@ import { Student } from '../student';
 })
 export class MarksFeederComponent implements OnInit {
   @Input() toFeed;
+
+
+  @Output() geed=new EventEmitter()
 
   obj: Student = new Student();
   constructor(private service: MarksheetService) { }
@@ -28,6 +31,7 @@ export class MarksFeederComponent implements OnInit {
 
     console.log(JSON.stringify(this.obj));
     this.service.feedStudentMarks(this.obj).subscribe();
+    this.service.sendClickEvent();
 
   }
 

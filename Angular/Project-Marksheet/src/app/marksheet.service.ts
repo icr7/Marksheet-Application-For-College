@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Student } from './student';
+import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class MarksheetService {
   list;
+  subject=new Subject<any>();
   constructor(private http: HttpClient) { }
 
   getAdmin(id: number, password: string) {
@@ -35,4 +37,12 @@ export class MarksheetService {
   my2List() {
     return this.list;
   }
+
+sendClickEvent(){
+  this.subject.next();
+}
+getClickEvent():Observable<any>{
+  return this.subject.asObservable();
+}
+
 }

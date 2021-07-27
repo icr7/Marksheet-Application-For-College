@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component,Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Student } from '../student';
+import { MarksheetService } from '../marksheet.service';
 
 
 @Component({
@@ -16,10 +17,13 @@ export class StudentGridComponent implements OnInit {
    columnDefs;
    rowSelection;
    obj:Student=new Student();
+@Input() public parentData
+
+clickEventSub:Subscription;
 
   rowData: Observable<any[]>;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private service:MarksheetService) {
     this.columnDefs = [
       { field: 'id', width: 40 },
       { field: 'name', width: 120 },
@@ -30,6 +34,7 @@ export class StudentGridComponent implements OnInit {
       { field: 'sst', width: 80 }
     ];
     this.rowSelection = 'single';
+    this.clickEventSub=this.service.getClickEvent().subscribe(()=>{this.refresh();})
   }
 
   ngOnInit(): void {
@@ -51,5 +56,7 @@ export class StudentGridComponent implements OnInit {
     this.rowData = this.http.get<any[]>('http://localhost:8080/api/allStudent')
   }
 
-
+  refresh(){
+    this.gridApi.refreshCells();
+  }
 }
